@@ -32,7 +32,7 @@ function lambdaSchool(num) {
 		return 'Number either indivisible or not a number';
 	}
 	if (num % 3 === 0 && num % 5 === 0 ){
-		return 'Lambda  School';
+		return 'Lambda School';
 	}
 	else if(num % 5 === 0){
 		return 'School';
