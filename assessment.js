@@ -56,13 +56,19 @@ function lambdaSchool(num) {
              longestString(['JavaScript', 'HTML', 'CSS']); // returns 'JavaScript'
 */
 
-function longestString(arrStr) {
-	let longest = arrStr[0].length;
-	arrStr.map(oldArr => longest = Math.max(longest, oldArr.length));
-	result = arrStr.filter(oldArr => oldArr.length == longest);
-	return result;
+function longestString(arrStr){
+  for (i=0; i<arrStr.length; i++){
+    var maxNum='';
+      if (arrStr[i].length > maxNum.length){
+        maxNum= arrStr[i].length;
+        
+      }
 
+  }
+  return maxNum;
 }
+
+
 
 /*
 4. Write a function called computeUserAverageAge that has a single parameter called users
