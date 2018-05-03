@@ -7,6 +7,7 @@ After writing your function uncomment the matching function reference at the bot
 // 1. Write a function called helloWorld that returns the string 'Hello World!'.
 
 function helloWorld() {
+	return 'Hello World!' ;
 
 }
 
@@ -23,9 +24,26 @@ function helloWorld() {
              lambdaSchool(8); // returns 8
 */
 
-function lambdaSchool() {
+function lambdaSchool(num) {
+    if (num === 0){
+      return "You aren't allowed to enter 0, enter other number(s)"
+    }
+	if ( typeof(num) != 'number' || num === null || num < 0 ){
+		return 'Number either indivisible or not a number';
+	}
+	if (num % 3 === 0 && num % 5 === 0 ){
+		return 'Lambda  School';
+	}
+	else if(num % 5 === 0){
+		return 'School';
+	}
+	else if (num % 3 === 0) {
+		return 'Lambda';
+	}
+	return num;
+} 
 
-}
+
 
 /*
 3. Write a function called longestString that has a single parameter called strs.
@@ -38,7 +56,11 @@ function lambdaSchool() {
              longestString(['JavaScript', 'HTML', 'CSS']); // returns 'JavaScript'
 */
 
-function longestString() {
+function longestString(arrStr) {
+	let longest = arrStr[0].length;
+	arrStr.map(oldArr => longest = Math.max(longest, oldArr.length));
+	result = arrStr.filter(oldArr => oldArr.length == longest);
+	return result;
 
 }
 
@@ -63,8 +85,10 @@ function longestString() {
              computeUserAverageAge(users); // returns 62 (This number is rounded up from 61.6666)
 */
 
-function computeUserAverageAge() {
-
+function computeUserAverageAge(users) {
+   let trimValue = (upperValue, value) => upperValue + value.age;
+   let ageSum = users.reduce(trimValue, 0);   
+   return Math.round (ageSum / users.length);
 }
 
 module.exports = {
